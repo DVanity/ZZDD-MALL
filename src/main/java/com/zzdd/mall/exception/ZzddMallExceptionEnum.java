@@ -11,7 +11,11 @@ public enum ZzddMallExceptionEnum {
     WRONG_PASSWORD(10006,"密码错误"),
     NEED_LOGIN(10007,"用户未登录"),
     UPDATE_FAILED(10008,"更新失败"),
-    NEED_ADMIN(10008,"不是管理员，不允许登录"),
+    NEED_ADMIN(10009,"不是管理员，不允许登录"),
+    NAME_NOT_NULL(10010,"参数不能为空"),
+    NAME_GORY_EXISTED(10011,"商品名不允许重复"),
+    CREATE_FAILED(10012,"商品创建失败"),
+    REQUEST_PARAM_ERROR(10013,"参数错误"),
     SYSTEM_ERROR(20000,"系统异常");
     /*
     * 异常码

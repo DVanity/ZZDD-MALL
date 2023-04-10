@@ -9,7 +9,7 @@ import com.zzdd.mall.exception.ZzddMallExceptionEnum;
 public class ApiRestResponse<T> {
     private Integer status;
 
-    private String mas;
+    private String msg;
 
     private T data;
 
@@ -17,15 +17,15 @@ public class ApiRestResponse<T> {
 
     private static final String OK_MSG = "SUCCESS";
 
-    public ApiRestResponse(Integer status, String mas, T data) {
+    public ApiRestResponse(Integer status, String msg, T data) {
         this.status = status;
-        this.mas = mas;
+        this.msg = msg;
         this.data = data;
     }
 
-    public ApiRestResponse(Integer status, String mas) {
+    public ApiRestResponse(Integer status, String msg) {
         this.status = status;
-        this.mas = mas;
+        this.msg = msg;
     }
 
     public ApiRestResponse() {
@@ -54,7 +54,7 @@ public class ApiRestResponse<T> {
     public String toString() {
         return "ApiRestResponse{" +
                 "status=" + status +
-                ", mas='" + mas + '\'' +
+                ", msg='" + msg + '\'' +
                 ", data=" + data +
                 '}';
     }
@@ -67,12 +67,12 @@ public class ApiRestResponse<T> {
         this.status = status;
     }
 
-    public String getMas() {
-        return mas;
+    public String getMsg() {
+        return msg;
     }
 
-    public void setMas(String mas) {
-        this.mas = mas;
+    public void setMsg(String msg) {
+        this.msg = msg;
     }
 
     public T getData() {

@@ -4,7 +4,7 @@ package com.zzdd.mall.exception;/*
  * creattime:    2023/4/6 - 15:03
  * */
 
-public class ZzddMallException extends Exception{
+public class ZzddMallException extends RuntimeException{
     private final Integer code;
     private final String message;
 
