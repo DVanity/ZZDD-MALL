@@ -7,6 +7,7 @@ import com.zzdd.mall.exception.ZzddMallException;
 import com.zzdd.mall.exception.ZzddMallExceptionEnum;
 import com.zzdd.mall.model.pojo.User;
 import com.zzdd.mall.service.UserService;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
@@ -25,12 +26,14 @@ public class UserController {
     @Autowired
     UserService userService;
 
+    @ApiOperation("第一个测试接口")
     @GetMapping("/test")
     @ResponseBody
     public User personalPage(){
         return userService.getUser();
     }
 
+    @ApiOperation("注册账号接口")
     @PostMapping("/register")
     @ResponseBody
     public ApiRestResponse register(@RequestParam("username") String userName, @RequestParam("password")String password) throws ZzddMallException {
@@ -49,6 +52,7 @@ public class UserController {
         return ApiRestResponse.success();
     }
 
+    @ApiOperation("登录接口")
     @PostMapping("/login")
     @ResponseBody
     public ApiRestResponse login(@RequestParam("username") String userName, @RequestParam("password")String password, HttpSession session) throws ZzddMallException {
@@ -67,6 +71,7 @@ public class UserController {
     }
 
     //更新个性签名
+    @ApiOperation("更新个性签名")
     @PostMapping("/user/update")
     @ResponseBody
     public ApiRestResponse updateUserInfo(HttpSession session,@RequestParam String signature) throws ZzddMallException {
@@ -82,6 +87,7 @@ public class UserController {
     }
 
     //登出
+    @ApiOperation("登出接口")
     @PostMapping("/user/logout")
     @ResponseBody
     public ApiRestResponse logout(HttpSession session){
@@ -90,6 +96,7 @@ public class UserController {
     }
 
     //管理员登录
+    @ApiOperation("管理员登录")
     @PostMapping("/adminlogin")
     @ResponseBody
     public ApiRestResponse adminlogin(@RequestParam("username") String userName, @RequestParam("password")String password, HttpSession session) throws ZzddMallException {

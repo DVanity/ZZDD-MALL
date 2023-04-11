@@ -19,5 +19,6 @@ public interface UserService {
     //更新人员信息
     void updateInformation(User user) throws ZzddMallException;
 
+    //检查是否是管理员
     boolean checkAdminRole(User user);
 }
